@@ -1,0 +1,116 @@
+// rwd alias ----------------------------
+
+=tablet
+  +mq(tablet)
+    @content
+
+=desktop
+  +mq(desktop)
+    @content
+
+=landscape
+  +mq($and: $mq-landscape)
+    @content
+
+=retina
+  +mq($and: $mq-hidpi)
+    @content
+
+// image ----------------------------
+
+// asset-related functions from: https://github.com/assetsjs/postcss-assets
+
+=retina-image($url, $ext)
+  $image: $url + $ext
+  $size: size($image)
+  width: width($image)
+  height: height($image)
+  background-image: resolve($image)
+  +retina
+    background-image: resolve($url + '@2x' + $ext)
+    background-size: $size
+
+=retina-background($url, $ext, $bg-size: cover)
+  $image: $url + $ext
+  background-image: resolve($image)
+  background-size: $bg-size
+  +retina
+    background-image: resolve($url + '@2x' + $ext)
+    background-size: $bg-size
+
+// debug ----------------------------
+
+=xx($opacity: .2)
+  outline: 1px solid rgba(red, $opacity)
+
+// alias ----------------------------
+
+=input-placeholder-color($color)
+  &::-webkit-input-placeholder
+    color: $color
+    -webkit-font-smoothing: antialiased
+
+  &:-moz-placeholder
+    color: $color
+
+  &::-moz-placeholder
+    color: lighten($color, 10%)
+
+  &:-ms-input-placeholder
+    color: $color
+
+// layout ----------------------------
+
+=pie-clearfix
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+// icon sprites -----------------------
+
+// %sprite
+//   $sprite: map-get($icons, sprite)
+//   $sprite-url: map-get($sprite, svgPath)
+//   display: inline-block
+//   background-image: resolve($sprite-url)
+
+// %ie-sprite
+//   $sprite: map-get($icons, sprite)
+//   $sprite-url: map-get($sprite, pngPath)
+//   display: inline-block
+//   background-image: resolve($sprite-url)
+
+// =icon($name, $type: all)
+//   $icon-map: map-get($icons, $name)
+
+//   $width-px: map-get($icon-map, width)
+//   $height-px: map-get($icon-map, height)
+//   $bg-position-x-px: map-get($icon-map, backgroundX)
+//   $bg-position-y-px: map-get($icon-map, backgroundY)
+
+//   $width-em: mq-px2em($width-px + 1)
+//   $height-em: mq-px2em($height-px + 1)
+//   $bg-position-x-em: mq-px2em($bg-position-x-px)
+//   $bg-position-y-em: mq-px2em($bg-position-y-px)
+
+//   @if $type == all
+//     @extend %sprite
+
+//   @if $type == all or $type == size
+//     width: $width-em
+//     height: $height-em
+
+//   @if $type == all or $type == position
+//     background-position: $bg-position-x-em $bg-position-y-em
+
+//   .lte-ie9 &
+//     @if $type == all
+//       @extend %ie-sprite
+
+//     @if $type == all or $type == size
+//       width: $width-px
+//       height: $height-px
+
+//     @if $type == all or $type == position
+//       background-position: $bg-position-x-px $bg-position-y-px

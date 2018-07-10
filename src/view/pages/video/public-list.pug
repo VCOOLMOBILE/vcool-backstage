@@ -1,0 +1,22 @@
+extends /layouts/_single-col
+
+block content
+  .single-block-wrap
+    .single-block
+      .page-header
+        .title 腳本名稱 的影片
+        .sub-title 共 132 個影片
+      table.table-list
+        thead
+          tr
+            th 影片名稱
+            th 建立日期
+            th 發起會員
+            th 動作
+        tbody
+          - for (var i=0; i<=20; i++)
+            tr
+              td 影片名稱
+              td 2018/06/25
+              td 會員名稱
+              td: a.btn.btn-primary(href='/video/video-preview' target='_blank') 觀看

@@ -1,0 +1,19 @@
+.option-bar
+  display: flex
+  justify-content: space-between
+  margin-bottom: $unit-len * 3
+
+  .option-group
+
+  .option-item
+    display: inline-block
+
+    * + *
+      margin-left: $unit-len
+
+  .option-item + .option-item
+    margin-left: $unit-len * 2
+
+  .info
+    display: inline-block
+    padding: $unit-len $unit-len $unit-len  0

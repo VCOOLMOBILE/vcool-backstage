@@ -1,0 +1,19 @@
+extends /layouts/_single-col
+
+block content
+  .single-block-wrap.center
+    .login
+      h1.title Vcool 管理後台
+      form.form
+        .form-unit
+          label.label 帳號
+          input(type='text')
+        .form-unit
+          label.label 密碼
+          input(type='password')
+        .form-unit
+          label.label 驗證碼
+          input(type='text')
+        .form-unit
+          a.btn.btn-primary(href='/script/') 登入
+          button.btn.btn-primary(type='button') 發送驗證碼

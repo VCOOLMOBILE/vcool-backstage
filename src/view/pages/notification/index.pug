@@ -1,0 +1,31 @@
+extends /layouts/_default
+
+block menu
+  +menu('notification')
+block content
+  +page-header('推播訊息', '共 100 則推播')
+  .control-panel
+    .option-bar
+      .option-group
+      .option-group
+        .option-item
+          a.btn.btn-primary(href='/notification/edit') 新增
+
+    table.table-list
+      thead
+        tr
+          th 推播時間
+          th 推播內容
+          th 推播對象
+          th 狀態
+          th 動作
+      tbody
+        - for(var i=0; i<10; i++)
+          tr
+            td 2018/06/23 12:00:00
+            td 推播內容
+            td 所有會員
+            td 未推播
+            td: a.btn.btn-primary(href='/notification/edit') 管理
+
+    include /partials/_pagination

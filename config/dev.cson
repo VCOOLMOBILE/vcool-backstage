@@ -1,0 +1,4 @@
+restart_on_gulpfile_change: true
+dev_port: 3750
+open_browser: 'external'
+doiuse: false

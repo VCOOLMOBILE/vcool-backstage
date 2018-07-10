@@ -1,0 +1,35 @@
+// RWD
+// ----------------------------------------
+
+$mq-responsive: true
+$mq-breakpoints: map-get($theme, breakpoints)
+
+@if $env == 'dev'
+  $mq-show-breakpoints: (phone, tablet, desktop, wide) !global
+
+// edit breakpoints in /config/shared.yaml
+// to see more options -> https://github.com/sass-mq/sass-mq
+$mq-landscape: '(orientation: landscape)'
+$mq-hidpi: '(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 120dpi), (min-resolution: 1.3dppx)'
+
+$xx: rgba(red, .1)
+
+$color-blue: #4A90E2
+$color-blue-dark: #376EAE
+$color-black-dark: #222222
+$color-black: #373737
+$color-black-light: #626262
+$color-gray: #C2C2C2
+$color-gray-light: #F2F2F2
+$color-red: #ef472f
+$color-red-dark: #bd3623
+$color-white: #FFFFFF
+$color-orange: #FF9E30
+
+// global style setting
+$border-radius: 4px
+$box-shadow: 0 1px 2px rgba(black, .25)
+
+// unit setting
+$unit-len: 8px
+$unit-sec: .25s

@@ -1,0 +1,36 @@
+.data-group
+  counter-reset: dataitem
+
+  .data-item + .data-item
+    margin-top: $unit-len * 2
+
+  .data-item
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: $unit-len * 2
+    background-color: $color-white
+    border: 1px solid $color-gray-light
+    border-radius: $border-radius
+    transition: border $unit-sec
+
+    &:before
+      counter-increment: dataitem
+      content: counter(dataitem)
+      padding-left: $unit-len * 2
+      @extend %fontset-l
+      font-weight: 500
+
+    &:hover
+      border-color: $color-orange
+
+  .data-block + .data-block
+    margin-left: $unit-len
+
+  .data-block
+    .serial
+      @extend %fontset-l
+      font-weight: 500
+      padding: $unit-len

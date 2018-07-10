@@ -1,0 +1,92 @@
+extends /layouts/_default
+
+block menu
+  +menu('report')
+block content
+  +page-header('檢舉訊息', '共 5 個訊息未處理')
+  ul.tab.nav.nav-tabs
+    li.tab-item.nav-item
+      a.nav-link.active(data-toggle='tab' href='#new') 未審
+    li.tab-item.nav-item
+      a.nav-link(data-toggle='tab' href='#blocked') 設為私人
+    li.tab-item.nav-item
+      a.nav-link(data-toggle='tab' href='#ignore') 忽略
+  .control-panel
+    .tab-content
+      .tab-pane.show.active#new
+        table.table-list
+          thead
+            tr
+              th 檢舉影片
+              th 檢舉原因
+              th 檢舉日期
+              th 狀態
+              th 動作
+          tbody
+            - for(var i=0; i<10; i++)
+              tr
+                td 影片名稱
+                td 檢舉原因
+                td 2018/06/23
+                td 未審
+                td
+                  .btn-group
+                    a.btn.btn-primary(href='/video/video-preview') 觀看
+                    button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' data-reference='parent')
+                    .dropdown-menu
+                      button.dropdown-item 設為私人
+                      button.dropdown-item 忽略
+
+        include /partials/_pagination
+
+      .tab-pane#blocked
+        table.table-list
+          thead
+            tr
+              th 檢舉影片
+              th 檢舉原因
+              th 檢舉日期
+              th 狀態
+              th 動作
+          tbody
+            - for(var i=0; i<10; i++)
+              tr
+                td 影片名稱
+                td 檢舉原因
+                td 2018/06/23
+                td 設為私人
+                td
+                  .btn-group
+                    a.btn.btn-primary(href='/video/video-preview') 觀看
+                    button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' data-reference='parent')
+                    .dropdown-menu
+                      button.dropdown-item 設為私人
+                      button.dropdown-item 忽略
+
+        include /partials/_pagination
+
+      .tab-pane#ignore
+        table.table-list
+          thead
+            tr
+              th 檢舉影片
+              th 檢舉原因
+              th 檢舉日期
+              th 狀態
+              th 動作
+          tbody
+            - for(var i=0; i<10; i++)
+              tr
+                td 影片名稱
+                td 檢舉原因
+                td 2018/06/23
+                td 忽略
+                td
+                  .btn-group
+                    a.btn.btn-primary(href='/video/video-preview') 觀看
+                    button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type='button' data-toggle='dropdown' data-reference='parent')
+                    .dropdown-menu
+                      button.dropdown-item 設為私人
+                      button.dropdown-item 忽略
+
+        include /partials/_pagination

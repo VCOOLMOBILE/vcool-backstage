@@ -1,0 +1,15 @@
+block variables
+  - var htmlClass = []
+
+//- 要新增 html 的 class 可以使用以下方式（在 pages 或繼承的 layout 裡），最後會組在一起
+
+//- append variables
+//-   htmlClass.push('your-classname')
+
+- htmlClass = htmlClass.join(' ')
+
+doctype html
+!= "<!--[if gt IE 8]><!-->"
+html(lang='zh-TW')&attributes({class: htmlClass})
+  != "<!--<![endif]-->"
+  block html

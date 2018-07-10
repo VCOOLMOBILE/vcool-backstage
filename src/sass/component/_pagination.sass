@@ -1,0 +1,41 @@
+.pagination
+  margin-top: 48px
+  padding: 0
+  list-style: none
+  text-align: center
+
+  li
+    display: inline-block
+    margin-bottom: 8px
+
+    +tablet
+      margin: 0 2px
+  a
+    display: block
+    padding: 0 8px
+    min-width: 24px
+    height: 24px
+    @extend %fontset-s
+    line-height: 24px
+    color: $color-black
+    text-decoration: none
+    background-color: $color-gray-light
+    border-radius: 32px
+    transition: background-color .25s, color .25s
+
+    &:hover
+      color: white
+      background-color: $color-black-light
+
+    &.active
+      color: white
+      background-color: $color-black
+
+    &.prev, &.next
+      padding: 0 16px
+
+  +tablet
+    a
+      min-width: 32px
+      height: 32px
+      line-height: 32px

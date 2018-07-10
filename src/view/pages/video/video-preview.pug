@@ -1,0 +1,11 @@
+extends /layouts/_single-col
+
+block content
+  .single-block-wrap.center
+    .single-block
+      .page-header
+        .title 影片名稱
+        .sub-title 會員名稱
+      video(autoplay='' muted='' preload='auto' controls)
+        source(src='/assets/images/movie.mp4' type='video/mp4')
+        | Your browser does not support the video tag.

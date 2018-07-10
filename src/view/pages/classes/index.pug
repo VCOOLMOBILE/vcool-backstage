@@ -1,0 +1,81 @@
+extends /layouts/_default
+
+block menu
+  +menu('classes')
+block content
+  +page-header('分類管理', '')
+  ul.tab.nav.nav-tabs
+    li.tab-item.nav-item
+      a.nav-link.active(data-toggle='tab' href='#script-class') 腳本分類
+    li.tab-item.nav-item
+      a.nav-link(data-toggle='tab' href='#storyboard-class') 分鏡分類
+
+  .control-panel
+    .tab-content
+      .tab-pane.show.active#script-class
+        .option-bar
+          .option-group
+          .option-group
+            .option-item
+              button.btn.btn-primary(type='button') 新增
+
+        .data-group#scriptClassData
+          - for(var i = 0; i < 5; i++)
+            .data-item
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 分類名稱 (中文)
+                      input(type='text')
+
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 分類名稱 (英文)
+                      input(type='text')
+
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 動作
+                      button.btn(type='button') 刪除
+
+        .action-bar
+          button.btn.btn-primary(type='button') 儲存
+
+      .tab-pane#storyboard-class
+        .option-bar
+          .option-group
+          .option-group
+            .option-item
+              button.btn.btn-primary(type='button') 新增
+
+        .data-group#storyboardClassData
+          - for(var i = 0; i < 5; i++)
+            .data-item
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 分類名稱 (中文)
+                      input(type='text')
+
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 分類名稱 (英文)
+                      input(type='text')
+
+              .data-block
+                form.form
+                  .form-col
+                    .form-unit
+                      label.label 動作
+                      button.btn(type='button') 刪除
+
+        .action-bar
+          button.btn.btn-primary(type='button') 儲存

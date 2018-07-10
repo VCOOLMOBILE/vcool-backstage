@@ -1,0 +1,30 @@
+.tab
+  display: flex
+  margin: 0
+  padding: 0
+  list-style: none
+  border-bottom: 3px solid $color-gray-light
+
+  .tab-item a
+    display: inline-block
+    padding: $unit-len
+    min-width: 120px
+    margin-bottom: -3px
+    @extend %fontset-m
+    font-weight: 400
+    text-align: center
+    text-decoration: none
+    color: $color-black-light
+    border-bottom: 3px solid $color-gray-light
+
+    &.active
+      font-weight: 500
+      color: $color-black
+      border-bottom: 3px solid $color-orange
+
+.tab-content
+  .tab-pane
+    display: none
+
+    &.active
+      display: block

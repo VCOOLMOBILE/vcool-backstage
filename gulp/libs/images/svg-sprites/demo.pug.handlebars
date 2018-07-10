@@ -1,0 +1,15 @@
+extends /layouts/_dev-sample
+
+append content
+  - var shapes = []
+  {{#shapes}}
+  - shapes.push({name: '{{name}}', width: {{width.outer}}, height: {{height.outer}} })
+  {{/shapes}}
+
+  body
+    p 本頁為在 gulp task - images:svg-sprites 中自動產出的 sample page，要使用以下 icon 請使用 mixin 於 pug 裡
+    ul
+      each shape in shapes
+        li
+          +icon(shape.name)
+          code +icon('#{shape.name}')
